@@ -40,15 +40,14 @@ describe('Klaarhq',()=>{
       
        cy.wait(5000)
        //file upload
-       const imagefile = 'cypress 101.png';
        cy.get('.mt-8')
-       .attachFile(imagefile);
+       .attachFile("cypress 101.png", {subjectType:'drag-n-drop'});
 
        cy.wait(5000)
 
        // Delete file
-       // cy.get('[data-cy="settings-workspace-logo-cancel-upload-button"]')
-       // .click({force:true})
+        cy.get('[data-cy="settings-workspace-logo-cancel-upload-button"]')
+        .click({force:true})
 
        //3.Customize modules        
        cy.get('[data-cy="workspace-settings-nav-menu-button"] > .ant-menu-submenu > .ant-menu > ul.ng-star-inserted > :nth-child(2) > [data-cy="submenu-button"]')
